@@ -1,0 +1,31 @@
+[user]
+	name = Ivica Loncar
+	email = iloncar.ml@gmail.com
+
+[core]
+	autocrlf = true
+
+[diff]
+	tool = "p4diff"
+
+[difftool "p4diff"]
+	cmd = C:/iloncar/Perforce/p4merge `cygpath -d "$LOCAL"` `cygpath -d "$REMOTE"`
+	prompt = false
+
+[merge]
+	summary = true
+	tool = "p4merge" 
+
+[mergetool "p4merge"]
+	cmd = C:/iloncar/Perforce/p4merge \
+		`cygpath -d "$PWD/$BASE"` \
+		`cygpath -d "$PWD/$LOCAL"` \
+		`cygpath -d "$PWD/$REMOTE"` \
+		`cygpath -d "$PWD/$MERGED"` 
+	keepBackup = false
+	trustExitCode = false
+
+[color "diff"]
+	whitespace = red reverse
+[color]
+	ui = true
