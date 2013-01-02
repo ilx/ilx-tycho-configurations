@@ -4,9 +4,17 @@
 
 [core]
 	autocrlf = true
+	filemode = false
 
 [diff]
-	tool = "p4diff"
+	tool = "kdiff3"
+#	tool = "p4diff"
+
+[difftool "kdiff3"]
+	path = C:/iloncar/Progs/KDiff3/kdiff3.exe
+	prompt = false
+	trustExitCode = false
+	keepBackup = false
 
 [difftool "p4diff"]
 	cmd = C:/iloncar/Perforce/p4merge `cygpath -d "$LOCAL"` `cygpath -d "$REMOTE"`
@@ -14,7 +22,14 @@
 
 [merge]
 	summary = true
-	tool = "p4merge" 
+#	tool = "p4merge" 
+	tool = "kdiff3" 
+
+[mergetool "kdiff3"]
+	path = C:/iloncar/Progs/KDiff3/kdiff3.exe
+	prompt = false
+	trustExitCode = false
+	keepBackup = false
 
 [mergetool "p4merge"]
 	cmd = C:/iloncar/Perforce/p4merge \
